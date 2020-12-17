@@ -111,6 +111,9 @@ const updatePermissions = yup
   .required()
   .noUnknown();
 
+const updateSettings = yup
+  .object();
+
 module.exports = {
   email,
   firstname,
@@ -121,4 +124,5 @@ module.exports = {
   isAPluginName,
   arrayOfConditionNames,
   updatePermissions,
+  updateSettings,
 };

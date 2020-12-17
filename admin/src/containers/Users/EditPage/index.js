@@ -43,6 +43,7 @@ const EditPage = ({ canUpdate }) => {
     'isActive',
     'roles',
     'registrationToken',
+    'settings',
   ]);
   const headerLabelId = isLoading
     ? 'app.containers.Users.EditPage.header.label-loading'

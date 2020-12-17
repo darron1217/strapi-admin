@@ -74,6 +74,12 @@ const useUsersForm = (endPoint, schema, cbSuccess, fieldsToPick) => {
           cleanedData.roles = cleanedData.roles.map(role => role.id);
         }
 
+        if (cleanedData.settings) {
+          try {
+            cleanedData.settings = JSON.parse(cleanedData.settings);
+          } catch (err) {}
+        }
+
         const { data } = await request(endPoint, {
           method: 'PUT',
           body: cleanedData,
