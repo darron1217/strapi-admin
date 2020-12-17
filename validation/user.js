@@ -27,6 +27,7 @@ const profileUpdateSchema = yup
     lastname: validators.lastname.notNull(),
     username: validators.username.nullable(),
     password: validators.password.notNull(),
+    settings: validators.updateSettings.nullable(),
   })
   .noUnknown();
 
@@ -46,6 +47,7 @@ const userUpdateSchema = yup
     password: validators.password.notNull(),
     isActive: yup.bool().notNull(),
     roles: validators.roles.min(1).notNull(),
+    settings: validators.updateSettings.nullable(),
   })
   .noUnknown();
 

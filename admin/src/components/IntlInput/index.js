@@ -3,6 +3,7 @@ import { translatedErrors } from 'strapi-helper-plugin';
 import { useIntl } from 'react-intl';
 import { Inputs } from '@buffetjs/custom';
 import PropTypes from 'prop-types';
+import InputJSONWithErrors from "../InputJSONWithErrors";
 
 const IntlInput = ({ label: labelId, defaultMessage, error, ...rest }) => {
   const { formatMessage } = useIntl();
@@ -18,7 +19,15 @@ const IntlInput = ({ label: labelId, defaultMessage, error, ...rest }) => {
   }, []);
 
   return (
-    <Inputs {...rest} label={label} error={translatedError} translatedErrors={formattedErrors} />
+    <Inputs
+      {...rest}
+      label={label}
+      error={translatedError}
+      translatedErrors={formattedErrors}
+      customInputs={{
+        json: InputJSONWithErrors,
+      }}
+    />
   );
 };
 

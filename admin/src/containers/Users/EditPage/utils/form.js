@@ -47,6 +47,11 @@ const form = {
     type: 'bool',
     validations: {},
   },
+  settings: {
+    label: 'Settings',
+    type: 'json',
+    validations: {},
+  },
 };
 
 export default form;
